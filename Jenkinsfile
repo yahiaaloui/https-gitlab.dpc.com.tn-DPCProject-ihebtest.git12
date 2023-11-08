@@ -10,6 +10,17 @@ pipeline {
         NEXUS_REPOSITORY = "elab_back"
         NEXUS_CREDENTIAL_ID = "iheb-user-credentials"
     }
+    stages {
+        stage('Git Checkout') {
+            steps {
+                script {
+                    git branch: 'develop',
+                        credentialsId: 'Git_acc	',
+                        url: 'https://gitlab.dpc.com.tn/DPCProject/beehive-learning_back.git'
+                        
+                }
+            }
+        }
         stage('build') {
           steps {
              echo 'Notify GitLab'
