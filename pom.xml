@@ -84,17 +84,6 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	
-	<build>
-    <plugins>
-        <plugin>
-            <groupId>org.owasp</groupId>
-            <artifactId>dependency-check-maven</artifactId>
-            <version>your-version-here</version>
-        </plugin>
-        <!-- Other plugins -->
-    </plugins>
-</build>
 
 	<build>
 		<plugins>
