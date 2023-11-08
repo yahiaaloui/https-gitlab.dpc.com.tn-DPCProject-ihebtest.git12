@@ -56,7 +56,6 @@ pipeline {
    
      dependencyCheckPublisher pattern: 'target/dependency-check-report.xml'  
     }  
-   }
    stage ('Code Quality Check via SonarQube') {
             steps {
                withSonarQubeEnv(installationName: 'sonarqube-acc', credentialsId: 'sonar-158') {
@@ -65,5 +64,4 @@ pipeline {
             }
         }
     }
-}
    
