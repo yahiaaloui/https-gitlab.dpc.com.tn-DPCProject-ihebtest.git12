@@ -47,11 +47,12 @@ pipeline {
            }
        }
        
-         stage ('OWASP Dependency-Check Vulnerabilities') {  
-    steps {  
-     withMaven(maven : 'maven') {  
-      sh 'mvn dependency-check:check'  
-     }  
+         stage("OWASP Dependency Check"){
+            steps{
+                dependencyCheck additionalArguments: '--format HTML', odcInstallation: 'DP-Chek'
+                dependencyCheckPublisher pattern:'**/dependency-check-report.html'
+            }
+        }
    
      dependencyCheckPublisher pattern: 'target/dependency-check-report.xml'  
     }  
